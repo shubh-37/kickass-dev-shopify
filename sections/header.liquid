@@ -12,7 +12,7 @@
         {% if link.links !=  blank %}
           <div class="relative">
             <button type="button" class="inline-flex items-center text-base text-gray-500 hover:text-gray-900">
-              {{link.title}}
+              {{link.title}} {%render 'icon-chevron'%}
             </button>
           </div>
           {%else%}
@@ -26,7 +26,7 @@
 
       <div class="hidden md:flex items-center justify-end md:flex-1 space-x-5">
         <a href="{{ routes.cart_url }}" class="whitespace-nowrap text-base text-gray-500 hover:text-gray-900">
-          Cart
+          {% render 'icon-shopping-cart' %}
         </a>
 
         <a href="{{ routes.account_login_url }}" class="text-base text-gray-500 hover:text-gray-900">Login</a>
