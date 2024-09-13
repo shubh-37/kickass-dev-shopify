@@ -95,7 +95,9 @@
         <!-- MOBILE MENU HEADER TITLE PLUS CLOSE BUTTON -->
         <div class='flex items-center justify-between pb-3'>
           <div>
-            <h1 class='text-lg text-gray-500'>{{ shop.name }}</h1>
+            <h1 class='text-lg text-gray-500'>
+              {{ section.settings['mobile-menu-title'] }}
+            </h1>
           </div>
           <div class='-mr-2'>
             <button
@@ -157,3 +159,20 @@
     </div>
   </div>
 </div>
+
+{% comment %} There can only be one schema per section {% endcomment %}
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "default": "Kickass Menu",
+      "id": "mobile-menu-title",
+      "type": "text",
+      "info": "This is the label for mobile menu nav",
+      "label": "Title"
+    }
+  ]
+}
+{% endschema %}
